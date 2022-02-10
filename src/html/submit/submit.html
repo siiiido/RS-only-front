@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,7 +42,7 @@
             class="input_name common_input"
             readonly
           />
-          <p class="common_add add_name">{{user.user_nickname}}</p>
+          <p class="common_add add_name"></p>
         </div>
 
         <div class="sex common_content">
@@ -56,7 +54,7 @@
             class="input_sex common_input"
             readonly
           />
-          <p class="common_add add_sex">{{user.gender}}</p>
+          <p class="common_add add_sex"></p>
         </div>
 
         <div class="age common_content">
@@ -68,7 +66,7 @@
             class="input_age common_input"
             readonly
           />
-          <p class="common_add add_age">{{user.age_range}}</p>
+          <p class="common_add add_age"></p>
         </div>
         <br /><br />
 
@@ -81,7 +79,6 @@
         method="POST"
         enctype="multipart/form-data"
       >
-        {% csrf_token %}
 
         <div class="send_content">
           <p class="matching_ment">원하는 매칭을 선택해 주세요 !</p>
@@ -110,7 +107,7 @@
             </li>
             
             <!-- 그룹 매칭 -->
-            <!-- 
+            
             <li class="group_li three_li">
               <input
                 type="radio"
@@ -131,7 +128,7 @@
                 class="four_to_four"
               />
               <label for="four" class="four_label">4:4</label>
-            </li> -->
+            </li>
           </div>
 
           <div class="choose_uni">
@@ -195,7 +192,7 @@
           </div>
         </div>
 
-        <p class="next_matching_msg">매칭일은 {{THIS_DATE}}입니다</p>
+        <p class="next_matching_msg">매칭일은 입니다</p>
         <p class="next_matching_msg">카카오톡 친구 찾기 허용 필수!!</p>
         <div class="submit_wrap">
           <input class="submit_btn" type="submit" value="제출하기" />
