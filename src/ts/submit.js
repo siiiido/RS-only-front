@@ -344,24 +344,17 @@
         var right_label = document.querySelectorAll(".right_label");
         for (var i = 0; i < 10; i++) {
             var target = e.target.parentNode;
-            if (target && e.target === left_label[i]) {
-                // (<HTMLElement>e.target).parentNode.nextElementSibling.classList.remove("sky");
+            if (target.nextElementSibling && e.target === left_label[i]) {
                 target.nextElementSibling.classList.remove("sky");
                 target.classList.remove("black");
                 target.classList.add("sky");
                 target.nextElementSibling.classList.add("black");
-                // e.target.parentNode.classList.add("sky");
-                // e.target.parentNode.nextElementSibling.classList.add("black");
             }
-            else if (target && e.target === right_label[i]) {
+            else if (target.previousElementSibling && e.target === right_label[i]) {
                 target.classList.remove("black");
                 target.previousElementSibling.classList.remove("sky");
                 target.classList.add("sky");
                 target.previousElementSibling.classList.add("black");
-                // e.target.parentNode.classList.remove("black");
-                // e.target.parentNode.previousElementSibling.classList.remove("sky");
-                // e.target.parentNode.classList.add("sky");
-                // e.target.parentNode.previousElementSibling.classList.add("black");
             }
         }
     }
@@ -373,7 +366,6 @@
         var form_field = document.querySelector(".form_field");
         //몇 명 매칭하는지
         if (form_field instanceof HTMLFormElement) {
-            // const matchingGroup = form_field.html_option.value;
             var matchingGroup = form_field.html_option.value;
             // 대학교 value
             var option_value = form_field.html_university.options[form_field.html_university.selectedIndex].value;
@@ -452,10 +444,7 @@
                 }
             }
             else if (two instanceof HTMLInputElement &&
-                matchingGroup == two.value
-            // matchingGroup == three.value ||
-            // matchingGroup == four.value
-            ) {
+                matchingGroup == two.value) {
                 if (option_value == "") {
                     alert("대학교를 선택해 주세요.");
                     e.preventDefault();
